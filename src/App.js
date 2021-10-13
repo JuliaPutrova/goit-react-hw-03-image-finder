@@ -21,22 +21,6 @@ class App extends Component {
     largeImage: "",
   };
 
-  //   handleSubmit = (query, response) => {
-  //   getPictures(this.state.query, 1).then((response) =>
-  //     this.setState({
-  //       query,
-  //       images: response,
-  //     })
-  //   );
-  // };
-
-  //метод для сохранения поиска
-  // handleSearchBarSubmit = (query) => {
-  //   this.setState({
-  //     query: query,
-  //   });
-  // };
-
   // метод для сохранения поиска
   handleSearchBarSubmit = (query) => {
     this.setState({
@@ -52,13 +36,13 @@ class App extends Component {
     const nextSearch = this.state.query;
     if (prevSearch !== nextSearch) {
       this.getPictures();
-      //проверка для плавного скролла
-      if (prevState.page !== this.state.page) {
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: "smooth",
-        });
-      }
+    }
+    // проверка для плавного скролла
+    if (prevState.page !== this.state.page) {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
     }
   }
 
